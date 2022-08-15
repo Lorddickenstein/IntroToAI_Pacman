@@ -28,7 +28,7 @@ Project in Introduction to AI A.Y. 2020-2021
 </details>
 
 # About the Project
-Contains the code that we submitted to our professor in Intro to AI as a requirement for the said course. Alongside the problem is an explanation that I have formulated my own based on my understanding. This project implements different tree traversal including **bfs**, **dfs**, **uniform-cost search**, and **a\* search**.
+Contains the code that we submitted to our professor in Intro to AI as a requirement for the said course. Alongside the problem is an explanation that I have formulated on my own based on my understanding of the processes. This project implements different search algorithms including **bfs**, **dfs**, **uniform-cost search**, and **a\* search**.
 
 This project was taken directly from  UC Berkeley's Introduction to AI course that was adapted by our professor in our Introduction to AI course. Some aspects of this project are taken directly from their course such as the introduction, how to use this program, and more. They are indicated by an **asterisk** (*). The only contribution I have is the search algorithm and the explanation on each problem in ***italicized*** format.
 
@@ -104,7 +104,7 @@ Your code should quickly find a solution for:
 *No, Pacman only goes on one path which is the array of returned directions in reverse order from the goal.*
 
 **Is this a least cost solution? If not, think about what depth-first search is doing wrong.**
-```No, the solution is not the least cost. It can be seen when using the medium and tiny mazes. DFS tend to expand fully on one side of the tree or graph thus if the goal is not on that side, the search agent will spend so much time or travel long distance on that side then finally which to another side.```
+*No, the solution is not the least cost. It can be seen when using the medium and tiny mazes. DFS tend to expand fully on one side of the tree or graph thus if the goal is not on that side, the search agent will spend so much time or travel long distance on that side then finally which to another side.*
 
 **How did your implementation of DFS solved Pacman’s problem?**
 *Our implementation can be summarized into the following steps: first, expand the nodes on one side, continue expanding until goal is found or that there are no more nodes to expand; next, make a list that keeps track of explored nodes, which is important so that the expansion of nodes will not go infinitely; then, at every node check if goal state, else get the unexplored child nodes and their ‘parent’ node (which is the current node) and add them in the stack; lastly, if the node contains the goal state, enter another loop where we add the ‘action’ needed to get to that node to the solution. As long as there is a ‘parent’ in that node, keep adding the action to the solution. We can imagine this in a tree such that once a goal is found, trace it back to its root, the order in reverse is the solution to the problem. Below is our implementation of DFS in the code. This do not use the iterative deepening algorithm but only the generic DFS.*
